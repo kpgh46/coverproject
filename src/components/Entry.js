@@ -5,7 +5,12 @@ export default function Entry(props) {
 		return (
 			<div>
 				<label for={field}>{field}</label>
-				<input type="text" placeholder="test" for={field}></input>
+				<input
+					onChange={props.updateFirst}
+					name={field.split(" ")[0].toLowerCase()}
+					type="text"
+					for={field}
+				></input>
 			</div>
 		);
 	});
