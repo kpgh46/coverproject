@@ -1,5 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Personal from "./components/Personal";
+import Experience from "./components/Experience";
+import Education from "./components/Education";
 
 function App() {
 	return (
@@ -7,11 +9,17 @@ function App() {
 			<h1 className="header">CV Project </h1>;
 			<div className="main">
 				<div className="entry">
-					<section className="personal"></section>
+					<section className="personal">
+						<Personal />
+					</section>
 
-					<section className="experience"></section>
+					<section className="experience">
+						<Experience />
+					</section>
 
-					<section className="education"></section>
+					<section className="education">
+						<Education />
+					</section>
 				</div>
 
 				<div className="preview">
