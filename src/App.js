@@ -1,7 +1,5 @@
 import "./App.css";
-import Personal from "./components/Personal";
-import Experience from "./components/Experience";
-import Education from "./components/Education";
+import Entry from "./components/Entry";
 
 function App() {
 	return (
@@ -10,15 +8,36 @@ function App() {
 			<div className="main">
 				<div className="entry">
 					<section className="personal">
-						<Personal />
+						<Entry
+							entryHeader="Personal"
+							text={[
+								"First Name",
+								"Last Name",
+								"Email",
+								"Address",
+								"Phone",
+							]}
+						/>
 					</section>
 
 					<section className="experience">
-						<Experience />
+						<Entry
+							entryHeader="Experience"
+							text={["Company Name", "Role", "City"]}
+						/>
 					</section>
 
 					<section className="education">
-						<Education />
+						<Entry
+							entryHeader="Education"
+							text={[
+								"University",
+								"Major",
+								"Minor",
+								"Degree",
+								"GPA",
+							]}
+						/>
 					</section>
 				</div>
 

@@ -36,5 +36,5 @@
 .entry-section {
 	width: 85%;
 	border: 1px green solid;
-	height: 100px;
+	height: auto;
 }
