@@ -9,12 +9,20 @@ function App() {
 		email: "",
 		address: "",
 		phone: "",
+		company: "",
+		role: "",
+		city: "",
+		university: "",
+		major: "",
+		minor: "",
+		degree: "",
+		gpa: "",
 	});
 	console.log(data.first);
 
 	// let [first, setFirst] = React.useState("");
 
-	function updateFirst(event) {
+	function updatePreview(event) {
 		setData((prevFormData) => {
 			return {
 				...prevFormData,
@@ -30,7 +38,7 @@ function App() {
 				<div className="entry">
 					<section className="personal">
 						<Entry
-							updateFirst={updateFirst}
+							updateFirst={updatePreview}
 							entryHeader="Personal"
 							text={[
 								"First Name",
@@ -44,6 +52,7 @@ function App() {
 
 					<section className="experience">
 						<Entry
+							updateFirst={updatePreview}
 							entryHeader="Experience"
 							text={["Company Name", "Role", "City"]}
 						/>
@@ -51,6 +60,7 @@ function App() {
 
 					<section className="education">
 						<Entry
+							updateFirst={updatePreview}
 							entryHeader="Education"
 							text={[
 								"University",
@@ -65,6 +75,7 @@ function App() {
 
 				<div className="preview">
 					<section className="preview-personal">
+						<br></br>
 						<div>First Name: {data.first}</div>
 						<div>LastName: {data.last}</div>
 						<div>Email: {data.email}</div>
@@ -72,9 +83,19 @@ function App() {
 						<div>Phone: {data.phone}</div>
 					</section>
 
-					<section className="preview-experience"></section>
+					<section className="preview-experience">
+						<div>Company: {data.company}</div>
+						<div>Role: {data.role}</div>
+						<div>City: {data.city}</div>
+					</section>
 
-					<section className="preview-education"></section>
+					<section className="preview-education">
+						<div>University: {data.university}</div>
+						<div>Major: {data.major}</div>
+						<div>Minor: {data.minor}</div>
+						<div>Degree: {data.degree}</div>
+						<div>GPA: {data.gpa}</div>
+					</section>
 				</div>
 			</div>
 		</div>
