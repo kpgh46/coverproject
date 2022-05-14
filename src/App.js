@@ -1,14 +1,14 @@
 import "./App.css";
 import React from "react";
 import Entry from "./components/Entry";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function App() {
 	let [data, setData] = React.useState({
-		first: "sdf",
-		last: "",
-		email: "",
-		address: "",
-		phone: "",
+		name: "Kevin McPeak",
+		email: "kevmc46@gmail.com",
+		address: "Pittsburgh Pennsylvania",
+		phone: "4123203548",
 		company: "",
 		role: "",
 		city: "",
@@ -31,6 +31,10 @@ function App() {
 		});
 	}
 
+	function upper(word) {
+		return word.toUpperCase();
+	}
+
 	return (
 		<div>
 			<h1 className="header">CV Project </h1>;
@@ -40,13 +44,7 @@ function App() {
 						<Entry
 							updateFirst={updatePreview}
 							entryHeader="Personal"
-							text={[
-								"First Name",
-								"Last Name",
-								"Email",
-								"Address",
-								"Phone",
-							]}
+							text={["Name", "Email", "Address", "Phone"]}
 						/>
 					</section>
 
@@ -74,28 +72,31 @@ function App() {
 				</div>
 
 				<div className="preview">
-					<section className="preview-personal">
-						<br></br>
-						<div>First Name: {data.first}</div>
-						<div>LastName: {data.last}</div>
-						<div>Email: {data.email}</div>
-						<div>Address: {data.address}</div>
-						<div>Phone: {data.phone}</div>
-					</section>
+					<div className="preview-container">
+						<section className="preview-personal">
+							<br></br>
+							<div className="name">{data.name}</div>
+							<div className="contact-info">
+								<div>{data.email}</div>
+								<div>Address: {data.address}</div>
+								<div>Phone: {data.phone}</div>
+							</div>
+						</section>
 
-					<section className="preview-experience">
-						<div>Company: {data.company}</div>
-						<div>Role: {data.role}</div>
-						<div>City: {data.city}</div>
-					</section>
+						{/* <section className="preview-experience">
+                  <div>Company: {data.company}</div>
+                  <div>Role: {data.role}</div>
+                  <div>City: {data.city}</div>
+                </section>
 
-					<section className="preview-education">
-						<div>University: {data.university}</div>
-						<div>Major: {data.major}</div>
-						<div>Minor: {data.minor}</div>
-						<div>Degree: {data.degree}</div>
-						<div>GPA: {data.gpa}</div>
-					</section>
+                <section className="preview-education">
+                  <div>University: {data.university}</div>
+                  <div>Major: {data.major}</div>
+                  <div>Minor: {data.minor}</div>
+                  <div>Degree: {data.degree}</div>
+                  <div>GPA: {data.gpa}</div>
+                </section> */}
+					</div>
 				</div>
 			</div>
 		</div>
