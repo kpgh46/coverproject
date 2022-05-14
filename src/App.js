@@ -14,14 +14,17 @@ function App() {
 		email: "kevmc46@gmail.com",
 		address: "Pittsburgh Pennsylvania",
 		phone: "4123203548",
-		company: "",
-		role: "",
-		city: "",
-		university: "",
-		major: "",
+		role: "Software Developer",
+		company: "SAP",
+		city: "Pittsburgh",
+		university: "Pennsylvania State University",
+		location: "Erie, PA",
+		major: "Bachelor's Degreen Business Administration",
 		minor: "",
 		degree: "",
 		gpa: "",
+		description:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec ex nisl. Duis sed euismod risus. Integer tristique pretium nunc vitae sagittis.",
 	});
 	console.log(data.first);
 
@@ -46,10 +49,6 @@ function App() {
 		});
 	}
 
-	function upper(word) {
-		return word.toUpperCase();
-	}
-
 	return (
 		<div>
 			<h1 className="header">CV Project </h1>;
@@ -67,8 +66,14 @@ function App() {
 						<Entry
 							updateFirst={updatePreview}
 							entryHeader="Experience"
-							text={["Company Name", "Role", "City"]}
+							text={[
+								"Role",
+								"Company Name",
+								"City",
+								"Description",
+							]}
 						/>
+						<button>Add Experience</button>
 					</section>
 
 					<section className="education">
@@ -77,10 +82,12 @@ function App() {
 							entryHeader="Education"
 							text={[
 								"University",
+								"Location",
 								"Major",
 								"Minor",
 								"Degree",
 								"GPA",
+								"Description",
 							]}
 						/>
 					</section>
@@ -107,19 +114,25 @@ function App() {
 							</div>
 						</section>
 
-						{/* <section className="preview-experience">
-                  <div>Company: {data.company}</div>
-                  <div>Role: {data.role}</div>
-                  <div>City: {data.city}</div>
-                </section>
+						<section className="preview-experience">
+							<h2>Experience</h2>
+							<h3>{data.role}</h3>
+							<div className="details">
+								<div>{data.company}</div>
+								<div>{data.city}</div>
+							</div>
+							<div>{data.description}</div>
+						</section>
 
-                <section className="preview-education">
-                  <div>University: {data.university}</div>
-                  <div>Major: {data.major}</div>
-                  <div>Minor: {data.minor}</div>
-                  <div>Degree: {data.degree}</div>
-                  <div>GPA: {data.gpa}</div>
-                </section> */}
+						<section className="preview-education">
+							<h2>Education</h2>
+							<h3>{data.major}</h3>
+							<div className="details">
+								<div>{data.university}</div>
+								<div>{data.degree}</div>
+							</div>
+							<div>{data.description}</div>
+						</section>
 					</div>
 				</div>
 			</div>

@@ -17,7 +17,7 @@ export default function Entry(props) {
 
 	return (
 		<div>
-			<h2 className="entry-header">{props.entryHeader}</h2>
+			<h4 className="entry-header">{props.entryHeader}</h4>
 			<div className="entry-section">
 				<form>{textInputs}</form>
 			</div>
