@@ -1,7 +1,12 @@
 import "./App.css";
 import React from "react";
 import Entry from "./components/Entry";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faEnvelope,
+	faPhone,
+	faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
 
 function App() {
 	let [data, setData] = React.useState({
@@ -19,6 +24,16 @@ function App() {
 		gpa: "",
 	});
 	console.log(data.first);
+
+	const mailIcon = (
+		<FontAwesomeIcon icon={faEnvelope} style={{ marginRight: "5px" }} />
+	);
+	const phoneIcon = (
+		<FontAwesomeIcon icon={faPhone} style={{ marginRight: "5px" }} />
+	);
+	const locationIcon = (
+		<FontAwesomeIcon icon={faLocationDot} style={{ marginRight: "5px" }} />
+	);
 
 	// let [first, setFirst] = React.useState("");
 
@@ -77,9 +92,18 @@ function App() {
 							<br></br>
 							<div className="name">{data.name}</div>
 							<div className="contact-info">
-								<div>{data.email}</div>
-								<div>Address: {data.address}</div>
-								<div>Phone: {data.phone}</div>
+								<div style={{ marginRight: "10px" }}>
+									{mailIcon}
+									{data.email}
+								</div>
+								<div style={{ marginRight: "10px" }}>
+									{locationIcon}
+									{data.address}
+								</div>
+								<div style={{ marginRight: "10px" }}>
+									{phoneIcon}
+									{data.phone}
+								</div>
 							</div>
 						</section>
 
