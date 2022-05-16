@@ -1,15 +1,18 @@
 import React from "react";
 
 export default function Entry(props) {
+	console.log(props.id);
+
 	let textInputs = props.text.map((field) => {
 		return (
 			<div>
-				<label for={field}>{field}</label>
+				<label for={field}>{field[0]}</label>
 				<input
-					onChange={props.updateFirst}
-					name={field.split(" ")[0].toLowerCase()}
+					onChange={(event) => props.updatePreview(event)}
+					name={field[0]}
 					type="text"
-					for={field}
+					for={field[1]}
+					id={props.id}
 				></input>
 			</div>
 		);
