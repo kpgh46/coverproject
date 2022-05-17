@@ -29,7 +29,9 @@ export default function Entry(props) {
 			<div className="entry-section">
 				<form>{textInputs}</form>
 				<button
-					onClick={(event) => props.removePersonal(event, props.id)}
+					onClick={(event) =>
+						props.removePersonal(event, props.id, props.setData)
+					}
 				>
 					Delete
 				</button>

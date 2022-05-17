@@ -42,6 +42,15 @@ function App() {
 		},
 	]);
 
+	let [educationData, setEducationData] = React.useState([
+		{
+			university: "Pennsylvania State University",
+			major: "Bachelor's Degree in Business Administration",
+			description: "Education blah blah blah",
+			id: uniqid(),
+		},
+	]);
+
 	let personalPreview = personalData.map((item) => {
 		return (
 			<section className="preview-personal">
@@ -69,6 +78,15 @@ function App() {
 			<section className="preview-experience">
 				<h2>{item.role}</h2>
 				<h3>{item.company}</h3>
+				<div className="details">{item.description}</div>
+			</section>
+		);
+	});
+	let educationPreview = educationData.map((item) => {
+		return (
+			<section className="preview-experience">
+				<h2>{item.university}</h2>
+				<h3>{item.major}</h3>
 				<div className="details">{item.description}</div>
 			</section>
 		);
@@ -115,6 +133,21 @@ function App() {
 			</div>
 		);
 	});
+	let educationEntry = educationData.map((item) => {
+		return (
+			<div>
+				<Entry
+					text={Object.entries(item)}
+					entryHeader="Education"
+					id={item.id}
+					updatePreview={updatePreview}
+					key={item.id}
+					removePersonal={removePersonal}
+					setData={setEducationData}
+				/>
+			</div>
+		);
+	});
 
 	function addPersonal() {
 		let newSection = {
@@ -143,11 +176,23 @@ function App() {
 			return [...oldData, newSection];
 		});
 	}
+	function addEducation() {
+		let newSection = {
+			university: "",
+			major: "",
+			description: "",
+			id: uniqid(),
+		};
 
-	function removePersonal(event, id) {
+		setEducationData((oldData) => {
+			return [...oldData, newSection];
+		});
+	}
+
+	function removePersonal(event, id, type) {
 		event.stopPropagation();
 
-		setPersonalData((oldData) =>
+		type((oldData) =>
 			oldData.filter((item) => {
 				return item.id !== id;
 			})
@@ -167,11 +212,16 @@ function App() {
 						{experienceEntry}
 						<button onClick={addExperience}>Add Experience</button>
 					</div>
+					<div>
+						{educationEntry}
+						<button onClick={addEducation}>Add Education</button>
+					</div>
 				</div>
 				<div className="preview">
 					<div className="preview-container">
 						<div>{personalPreview}</div>
 						<div>{experiencePreview}</div>
+						<div>{educationPreview}</div>
 					</div>
 				</div>
 			</div>

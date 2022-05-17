@@ -36,7 +36,7 @@
 	flex-direction: column;
 	flex-wrap: nowrap;
 	/* align-items: center; */
-	width: 80%;
+	width: 70%;
 	height: 800px;
 	border: 1px solid black;
 	margin-top: 22px;
@@ -91,15 +91,11 @@ input {
 	align-items: center;
 	border: 1px solid red;
 	position: relative;
-	width: 90%;
 }
 
 .preview-experience {
 	display: flex;
 	flex-direction: column;
-	position: absolute;
-	width: 90%;
-	/* align-items: left; */
 	border: 1px solid red;
 }
 
