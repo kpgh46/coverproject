@@ -10,7 +10,9 @@ export default function Entry(props) {
 			<div>
 				<label for={field}>{field[0]}</label>
 				<input
-					onChange={(event) => props.updatePreview(event)}
+					onChange={(event) =>
+						props.updatePreview(event, props.setData)
+					}
 					name={field[0]}
 					type="text"
 					for={field[1]}

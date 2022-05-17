@@ -23,7 +23,7 @@ function App() {
 
 	//////////////////////////////////////////////////////
 
-	let [personalData, setpersonalData] = React.useState([
+	let [personalData, setPersonalData] = React.useState([
 		{
 			name: "Kevin McPeak",
 			email: "kmcpeak46@gmail.com",
@@ -74,8 +74,8 @@ function App() {
 		);
 	});
 
-	function updatePreview(event) {
-		setpersonalData((prevData) =>
+	function updatePreview(event, type) {
+		type((prevData) =>
 			prevData.map((item) => {
 				return event.target.id === item.id
 					? { ...item, [event.target.name]: event.target.value }
@@ -94,6 +94,7 @@ function App() {
 					updatePreview={updatePreview}
 					key={item.id}
 					removePersonal={removePersonal}
+					setData={setPersonalData}
 				/>
 			</div>
 		);
@@ -109,6 +110,7 @@ function App() {
 					updatePreview={updatePreview}
 					key={item.id}
 					removePersonal={removePersonal}
+					setData={setExperienceData}
 				/>
 			</div>
 		);
@@ -123,7 +125,21 @@ function App() {
 			id: uniqid(),
 		};
 
-		setpersonalData((oldData) => {
+		setPersonalData((oldData) => {
+			return [...oldData, newSection];
+		});
+	}
+
+	function addExperience() {
+		let newSection = {
+			role: "",
+			company: "",
+			description: "",
+
+			id: uniqid(),
+		};
+
+		setExperienceData((oldData) => {
 			return [...oldData, newSection];
 		});
 	}
@@ -131,7 +147,7 @@ function App() {
 	function removePersonal(event, id) {
 		event.stopPropagation();
 
-		setpersonalData((oldData) =>
+		setPersonalData((oldData) =>
 			oldData.filter((item) => {
 				return item.id !== id;
 			})
@@ -149,7 +165,7 @@ function App() {
 					</div>
 					<div>
 						{experienceEntry}
-						<button onClick={addPersonal}>Add Experience</button>
+						<button onClick={addExperience}>Add Experience</button>
 					</div>
 				</div>
 				<div className="preview">
