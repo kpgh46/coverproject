@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Entry(props) {
 	let fields = props.text.filter((item) => {
-		return item[0] !== "id";
+		return item[0] !== "id" && item[0] !== "to" && item[0] !== "from";
 	});
 
 	let textInputs = fields.map((field) => {
@@ -23,11 +23,35 @@ export default function Entry(props) {
 		);
 	});
 
+	let dates = props.text.filter((item) => {
+		return item[0] === "to" || item[0] === "from";
+	});
+
+	let dateInputs = dates.map((item) => {
+		return (
+			<div>
+				<label for={item}>{item[0]}</label>
+				<input
+					onChange={(event) =>
+						props.updatePreview(event, props.setData)
+					}
+					type="date"
+					for={item[1]}
+					id={props.id}
+					value={item[1]}
+				></input>
+			</div>
+		);
+	});
+
 	return (
 		<div>
 			<h4 className="entry-header">{props.entryHeader}</h4>
 			<div className="entry-section">
-				<form>{textInputs}</form>
+				<form>
+					{textInputs}
+					{dateInputs}
+				</form>
 				{props.entryHeader !== "Personal" ? (
 					<button
 						onClick={(event) =>

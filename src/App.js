@@ -38,6 +38,8 @@ function App() {
 			role: "Software Engineer",
 			company: "SAP",
 			description: "blah blah blah",
+			from: "2020-05-17",
+			to: "2022-05-18",
 			id: uniqid(),
 		},
 	]);
@@ -47,6 +49,8 @@ function App() {
 			university: "Pennsylvania State University",
 			major: "Bachelor's Degree in Business Administration",
 			description: "Education blah blah blah",
+			from: "2006-05-17",
+			to: "2011-05-18",
 			id: uniqid(),
 		},
 	]);
