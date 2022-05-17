@@ -28,13 +28,17 @@ export default function Entry(props) {
 			<h4 className="entry-header">{props.entryHeader}</h4>
 			<div className="entry-section">
 				<form>{textInputs}</form>
-				<button
-					onClick={(event) =>
-						props.removePersonal(event, props.id, props.setData)
-					}
-				>
-					Delete
-				</button>
+				{props.entryHeader !== "Personal" ? (
+					<button
+						onClick={(event) =>
+							props.removeSection(event, props.id, props.setData)
+						}
+					>
+						Delete
+					</button>
+				) : (
+					""
+				)}
 			</div>
 		</div>
 	);

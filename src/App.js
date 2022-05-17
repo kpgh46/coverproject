@@ -111,7 +111,7 @@ function App() {
 					id={item.id}
 					updatePreview={updatePreview}
 					key={item.id}
-					removePersonal={removePersonal}
+					removeSection={removeSection}
 					setData={setPersonalData}
 				/>
 			</div>
@@ -127,7 +127,7 @@ function App() {
 					id={item.id}
 					updatePreview={updatePreview}
 					key={item.id}
-					removePersonal={removePersonal}
+					removeSection={removeSection}
 					setData={setExperienceData}
 				/>
 			</div>
@@ -142,26 +142,12 @@ function App() {
 					id={item.id}
 					updatePreview={updatePreview}
 					key={item.id}
-					removePersonal={removePersonal}
+					removeSection={removeSection}
 					setData={setEducationData}
 				/>
 			</div>
 		);
 	});
-
-	function addPersonal() {
-		let newSection = {
-			name: "",
-			email: "",
-			address: "",
-			phone: "",
-			id: uniqid(),
-		};
-
-		setPersonalData((oldData) => {
-			return [...oldData, newSection];
-		});
-	}
 
 	function addExperience() {
 		let newSection = {
@@ -189,7 +175,7 @@ function App() {
 		});
 	}
 
-	function removePersonal(event, id, type) {
+	function removeSection(event, id, type) {
 		event.stopPropagation();
 
 		type((oldData) =>
@@ -204,10 +190,7 @@ function App() {
 			<h1 className="header">CV Project </h1>;
 			<div className="main">
 				<div className="entry">
-					<div>
-						{personalEntry}
-						<button onClick={addPersonal}>Add Personal</button>
-					</div>
+					<div>{personalEntry}</div>
 					<div>
 						{experienceEntry}
 						<button onClick={addExperience}>Add Experience</button>
