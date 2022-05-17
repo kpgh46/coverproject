@@ -1,8 +1,6 @@
 import React from "react";
 
 export default function Entry(props) {
-	console.log(props.id);
-
 	let textInputs = props.text.map((field) => {
 		return (
 			<div>
@@ -13,6 +11,7 @@ export default function Entry(props) {
 					type="text"
 					for={field[1]}
 					id={props.id}
+					value={field[1]}
 				></input>
 			</div>
 		);
@@ -23,6 +22,11 @@ export default function Entry(props) {
 			<h4 className="entry-header">{props.entryHeader}</h4>
 			<div className="entry-section">
 				<form>{textInputs}</form>
+				<button
+					onClick={(event) => props.removePersonal(event, props.id)}
+				>
+					Delete
+				</button>
 			</div>
 		</div>
 	);

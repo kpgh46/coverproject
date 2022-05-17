@@ -8,7 +8,7 @@ import {
 	faPhone,
 	faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import { isContentEditable } from "@testing-library/user-event/dist/utils";
+// import { isContentEditable } from "@testing-library/user-event/dist/utils";
 
 function App() {
 	const mailIcon = (
@@ -29,14 +29,7 @@ function App() {
 			email: "kmcpeak46@gmail.com",
 			address: "Pittsburgh",
 			phone: "12343",
-			id: uniqid(),
-		},
-		{
-			name: "Ava Dava",
-			email: "avagmail.gmail.com",
-			address: "saintclar",
-			phone: "23832",
-			id: uniqid(),
+			id: 2,
 		},
 	]);
 
@@ -61,7 +54,7 @@ function App() {
 			</section>
 		);
 	});
-	console.log(personaldata);
+	// console.log(personaldata);
 
 	function updatePreview(event) {
 		setPersonalData((prevData) =>
@@ -77,22 +70,47 @@ function App() {
 		return (
 			<div>
 				<Entry
-					key={item.id}
 					text={Object.entries(item)}
 					entryHeader="Personal"
 					id={item.id}
 					updatePreview={updatePreview}
+					key={item.id}
+					removePersonal={removePersonal}
 				/>
 			</div>
 		);
 	});
 
+	function addPersonal() {
+		let newSection = {
+			name: "",
+			email: "",
+			address: "",
+			phone: "",
+			id: uniqid(),
+		};
+
+		setPersonalData((oldData) => {
+			return [...oldData, newSection];
+		});
+	}
+
+	function removePersonal(event, id) {
+		event.stopPropagation();
+
+		setPersonalData((oldData) => oldData.filter((item) => item.id !== id));
+	}
+
 	return (
 		<div>
 			<h1 className="header">CV Project </h1>;
 			<div className="main">
-				<div className="entry"></div>
-				<div>{personalEntry}</div>
+				<div className="entry">
+					<div>
+						{personalEntry}
+						<button onClick={addPersonal}>Add Personal</button>
+					</div>
+				</div>
 				<div className="preview">
 					<div className="preview-container">{personal}</div>
 				</div>
