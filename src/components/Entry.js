@@ -1,7 +1,11 @@
 import React from "react";
 
 export default function Entry(props) {
-	let textInputs = props.text.map((field) => {
+	let fields = props.text.filter((item) => {
+		return item[0] !== "id";
+	});
+
+	let textInputs = fields.map((field) => {
 		return (
 			<div>
 				<label for={field}>{field[0]}</label>

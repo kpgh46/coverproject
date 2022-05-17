@@ -34,7 +34,8 @@
 .preview-container {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	flex-wrap: nowrap;
+	/* align-items: center; */
 	width: 80%;
 	height: 800px;
 	border: 1px solid black;
@@ -43,6 +44,7 @@
 	border: 0.5px solid grey;
 	padding-left: 20px;
 	padding-right: 20px;
+	position: relative;
 }
 
 .entry-header {
@@ -80,21 +82,24 @@ input {
 	font-size: 55px;
 }
 
+.contact-info {
+	display: flex;
+}
 .preview-personal {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	border: 1px solid red;
-}
-
-.contact-info {
-	display: flex;
+	position: relative;
+	width: 90%;
 }
 
 .preview-experience {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	position: absolute;
+	width: 90%;
+	/* align-items: left; */
 	border: 1px solid red;
 }
 

@@ -23,17 +23,26 @@ function App() {
 
 	//////////////////////////////////////////////////////
 
-	let [personaldata, setPersonalData] = React.useState([
+	let [personalData, setpersonalData] = React.useState([
 		{
 			name: "Kevin McPeak",
 			email: "kmcpeak46@gmail.com",
 			address: "Pittsburgh",
 			phone: "12343",
-			id: 2,
+			id: uniqid(),
 		},
 	]);
 
-	let personal = personaldata.map((item) => {
+	let [experienceData, setExperienceData] = React.useState([
+		{
+			role: "Software Engineer",
+			company: "SAP",
+			description: "blah blah blah",
+			id: uniqid(),
+		},
+	]);
+
+	let personalPreview = personalData.map((item) => {
 		return (
 			<section className="preview-personal">
 				<div className="name">{item.name}</div>
@@ -54,10 +63,19 @@ function App() {
 			</section>
 		);
 	});
-	// console.log(personaldata);
+
+	let experiencePreview = experienceData.map((item) => {
+		return (
+			<section className="preview-experience">
+				<h2>{item.role}</h2>
+				<h3>{item.company}</h3>
+				<div className="details">{item.description}</div>
+			</section>
+		);
+	});
 
 	function updatePreview(event) {
-		setPersonalData((prevData) =>
+		setpersonalData((prevData) =>
 			prevData.map((item) => {
 				return event.target.id === item.id
 					? { ...item, [event.target.name]: event.target.value }
@@ -66,12 +84,27 @@ function App() {
 		);
 	}
 
-	let personalEntry = personaldata.map((item) => {
+	let personalEntry = personalData.map((item) => {
 		return (
 			<div>
 				<Entry
 					text={Object.entries(item)}
 					entryHeader="Personal"
+					id={item.id}
+					updatePreview={updatePreview}
+					key={item.id}
+					removePersonal={removePersonal}
+				/>
+			</div>
+		);
+	});
+
+	let experienceEntry = experienceData.map((item) => {
+		return (
+			<div>
+				<Entry
+					text={Object.entries(item)}
+					entryHeader="Experience"
 					id={item.id}
 					updatePreview={updatePreview}
 					key={item.id}
@@ -90,7 +123,7 @@ function App() {
 			id: uniqid(),
 		};
 
-		setPersonalData((oldData) => {
+		setpersonalData((oldData) => {
 			return [...oldData, newSection];
 		});
 	}
@@ -98,7 +131,11 @@ function App() {
 	function removePersonal(event, id) {
 		event.stopPropagation();
 
-		setPersonalData((oldData) => oldData.filter((item) => item.id !== id));
+		setpersonalData((oldData) =>
+			oldData.filter((item) => {
+				return item.id !== id;
+			})
+		);
 	}
 
 	return (
@@ -110,9 +147,16 @@ function App() {
 						{personalEntry}
 						<button onClick={addPersonal}>Add Personal</button>
 					</div>
+					<div>
+						{experienceEntry}
+						<button onClick={addPersonal}>Add Experience</button>
+					</div>
 				</div>
 				<div className="preview">
-					<div className="preview-container">{personal}</div>
+					<div className="preview-container">
+						<div>{personalPreview}</div>
+						<div>{experiencePreview}</div>
+					</div>
 				</div>
 			</div>
 		</div>
