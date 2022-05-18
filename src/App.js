@@ -8,6 +8,7 @@ import {
 	faPhone,
 	faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import { format, parseISO } from "date-fns";
 // import { isContentEditable } from "@testing-library/user-event/dist/utils";
 
 function App() {
@@ -78,6 +79,8 @@ function App() {
 	});
 
 	let experiencePreview = experienceData.map((item) => {
+		let from = parseISO(item.from);
+		let to = parseISO(item.to);
 		return (
 			<section className="preview-experience">
 				<div className="dates">
@@ -86,7 +89,8 @@ function App() {
 					</h2>
 					<div>
 						<div>
-							{item.from}-{item.to}
+							{format(from, "MMM,dd,yyyy")} -
+							{format(to, "MMM,dd,yyyy")}
 						</div>
 					</div>
 				</div>
@@ -96,13 +100,16 @@ function App() {
 		);
 	});
 	let educationPreview = educationData.map((item) => {
+		let from = parseISO(item.from);
+		let to = parseISO(item.to);
 		return (
 			<section className="preview-experience">
 				<div className="dates">
 					<h2>{item.university}</h2>
 					<div>
 						<div>
-							{item.from}-{item.to}
+							{format(from, "MMM,dd,yyyy")} -
+							{format(to, "MMM,dd,yyyy")}
 						</div>
 					</div>
 				</div>
