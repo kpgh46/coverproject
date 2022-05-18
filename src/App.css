@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@757&family=Poppins:wght@300&display=swap");
+
+body {
+	font-family: "Poppins", sans-serif;
+	font-weight: bold;
+}
 .header {
 	display: flex;
 	position: relative;
@@ -7,6 +14,7 @@
 	justify-content: center;
 	align-items: center;
 	background-color: rgb(136, 133, 133);
+	font-family: "Josefin Sans", cursive;
 }
 
 .main {
@@ -95,6 +103,7 @@ textarea {
 	animation-name: mui-auto-fill-cancel;
 	animation-duration: 10ms;
 	padding: 16.5px 14px;
+	white-space: pre-wrap;
 }
 
 .name {
@@ -108,18 +117,19 @@ textarea {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	position: relative;
 }
 
 .preview-experience {
 	display: flex;
 	flex-direction: column;
-	border: 1px solid red;
+	/* border: 1px solid red; */
 }
 
 h3 {
 	width: 100%;
+	font-weight: bolder;
 	font-size: 18px;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -129,7 +139,7 @@ h3 {
 
 .details {
 	display: flex;
-	border: 1px solid;
+	/* border: 1px solid; */
 	width: 100%;
 }
 

@@ -224,9 +224,9 @@ function App() {
 				<div className="preview">
 					<div className="preview-container">
 						<div>{personalPreview}</div>
-						<h3>Experience</h3>
+						<h3>EXPERIENCE</h3>
 						<div>{experiencePreview}</div>
-						<h3>Education</h3>
+						<h3>EDUCATION</h3>
 						<div>{educationPreview}</div>
 					</div>
 				</div>

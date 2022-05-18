@@ -14,7 +14,7 @@ export default function Entry(props) {
 	let textInputs = fields.map((field) => {
 		return (
 			<div>
-				<label for={field}>{field[0]}</label>
+				<label for={field}>{field[0]}:</label>
 				<input
 					onChange={(event) =>
 						props.updatePreview(event, props.setData)
@@ -36,7 +36,7 @@ export default function Entry(props) {
 	let dateInputs = dates.map((item) => {
 		return (
 			<div>
-				<label for={item}>{item[0]}</label>
+				<label for={item}>{item[0]}:</label>
 				<input
 					onChange={(event) =>
 						props.updatePreview(event, props.setData)
@@ -58,8 +58,10 @@ export default function Entry(props) {
 	let descriptionInputs = description.map((text) => {
 		return (
 			<div>
-				<label for={text}>{text[0]}</label>
+				<label for={text}>{text[0]}:</label>
 				<textarea
+					cols="60"
+					rows="8"
 					onChange={(event) =>
 						props.updatePreview(event, props.setData)
 					}
