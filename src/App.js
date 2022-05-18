@@ -80,7 +80,14 @@ function App() {
 	let experiencePreview = experienceData.map((item) => {
 		return (
 			<section className="preview-experience">
-				<h2>{item.role}</h2>
+				<div className="dates">
+					<h2>{item.role}</h2>
+					<div>
+						<div>
+							{item.from}-{item.to}
+						</div>
+					</div>
+				</div>
 				<h3>{item.company}</h3>
 				<div className="details">{item.description}</div>
 			</section>
@@ -89,7 +96,14 @@ function App() {
 	let educationPreview = educationData.map((item) => {
 		return (
 			<section className="preview-experience">
-				<h2>{item.university}</h2>
+				<div className="dates">
+					<h2>{item.university}</h2>
+					<div>
+						<div>
+							{item.from}-{item.to}
+						</div>
+					</div>
+				</div>
 				<h3>{item.major}</h3>
 				<div className="details">{item.description}</div>
 			</section>
@@ -158,7 +172,8 @@ function App() {
 			role: "",
 			company: "",
 			description: "",
-
+			to: "",
+			from: "",
 			id: uniqid(),
 		};
 
@@ -171,6 +186,8 @@ function App() {
 			university: "",
 			major: "",
 			description: "",
+			to: "",
+			from: "",
 			id: uniqid(),
 		};
 
@@ -207,7 +224,9 @@ function App() {
 				<div className="preview">
 					<div className="preview-container">
 						<div>{personalPreview}</div>
+						<h3>Experience</h3>
 						<div>{experiencePreview}</div>
+						<h3>Education</h3>
 						<div>{educationPreview}</div>
 					</div>
 				</div>

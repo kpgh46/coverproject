@@ -1,8 +1,14 @@
+import { text } from "@fortawesome/fontawesome-svg-core";
 import React from "react";
 
 export default function Entry(props) {
 	let fields = props.text.filter((item) => {
-		return item[0] !== "id" && item[0] !== "to" && item[0] !== "from";
+		return (
+			item[0] !== "id" &&
+			item[0] !== "to" &&
+			item[0] !== "from" &&
+			item[0] !== "description"
+		);
 	});
 
 	let textInputs = fields.map((field) => {
@@ -36,10 +42,32 @@ export default function Entry(props) {
 						props.updatePreview(event, props.setData)
 					}
 					type="date"
+					name={item[0]}
 					for={item[1]}
 					id={props.id}
 					value={item[1]}
 				></input>
+			</div>
+		);
+	});
+
+	let description = props.text.filter((item) => {
+		return item[0] === "description";
+	});
+
+	let descriptionInputs = description.map((text) => {
+		return (
+			<div>
+				<label for={text}>{text[0]}</label>
+				<textarea
+					onChange={(event) =>
+						props.updatePreview(event, props.setData)
+					}
+					for={text[1]}
+					name={text[0]}
+					id={props.id}
+					value={text[1]}
+				></textarea>
 			</div>
 		);
 	});
@@ -51,6 +79,7 @@ export default function Entry(props) {
 				<form>
 					{textInputs}
 					{dateInputs}
+					{descriptionInputs}
 				</form>
 				{props.entryHeader !== "Personal" ? (
 					<button
