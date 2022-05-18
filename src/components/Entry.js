@@ -2,6 +2,10 @@ import { text } from "@fortawesome/fontawesome-svg-core";
 import React from "react";
 
 export default function Entry(props) {
+	let capitalize = (string) => {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	};
+
 	let fields = props.text.filter((item) => {
 		return (
 			item[0] !== "id" &&
@@ -14,7 +18,7 @@ export default function Entry(props) {
 	let textInputs = fields.map((field) => {
 		return (
 			<div>
-				<label for={field}>{field[0]}:</label>
+				<label for={field}>{capitalize(field[0])}:</label>
 				<input
 					onChange={(event) =>
 						props.updatePreview(event, props.setData)
@@ -36,7 +40,7 @@ export default function Entry(props) {
 	let dateInputs = dates.map((item) => {
 		return (
 			<div>
-				<label for={item}>{item[0]}:</label>
+				<label for={item}>{capitalize(item[0])}:</label>
 				<input
 					onChange={(event) =>
 						props.updatePreview(event, props.setData)
@@ -58,7 +62,7 @@ export default function Entry(props) {
 	let descriptionInputs = description.map((text) => {
 		return (
 			<div>
-				<label for={text}>{text[0]}:</label>
+				<label for={text}>{capitalize(text[0])}:</label>
 				<textarea
 					cols="60"
 					rows="8"

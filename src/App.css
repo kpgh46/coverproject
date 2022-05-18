@@ -2,8 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@757&family=Poppins:wght@300&display=swap");
 
 body {
-	font-family: "Poppins", sans-serif;
-	font-weight: bold;
+	/* font-family: "Poppins", sans-serif;
+	f */
+	/* font-weight: bold; */
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 .header {
 	display: flex;
@@ -13,7 +15,7 @@ body {
 	border: 1px solid;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(136, 133, 133);
+	background-color: lightgrey;
 	font-family: "Josefin Sans", cursive;
 }
 
@@ -53,6 +55,7 @@ body {
 	padding-left: 20px;
 	padding-right: 20px;
 	position: relative;
+	white-space: pre-wrap;
 }
 
 .entry-header {
@@ -112,6 +115,7 @@ textarea {
 
 .contact-info {
 	display: flex;
+	border-bottom: 1px solid;
 }
 .preview-personal {
 	display: flex;
@@ -125,6 +129,7 @@ textarea {
 	display: flex;
 	flex-direction: column;
 	/* border: 1px solid red; */
+	padding-left: 25px;
 }
 
 h3 {
@@ -141,6 +146,7 @@ h3 {
 	display: flex;
 	/* border: 1px solid; */
 	width: 100%;
+	padding-left: 25px;
 }
 
 .dates {
@@ -148,17 +154,18 @@ h3 {
 	justify-content: space-between;
 	height: 35px;
 	align-items: center;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	width: 100%;
-	font-size: 20px;
+	font-size: 25px;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	background-color: lightgray;
+	/* background-color: lightgray; */
 	margin-bottom: 0;
 }
 
 .dates h2 {
 	font-size: large;
+	font-weight: bolder;
 }
 
 .dates div {
@@ -167,4 +174,9 @@ h3 {
 
 	margin-right: 8px;
 	/* width: 200px; */
+}
+
+span {
+	font-style: italic;
+	font-weight: 700;
 }

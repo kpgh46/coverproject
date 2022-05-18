@@ -81,14 +81,16 @@ function App() {
 		return (
 			<section className="preview-experience">
 				<div className="dates">
-					<h2>{item.role}</h2>
+					<h2>
+						{item.company}, <span>{item.role}</span>
+					</h2>
 					<div>
 						<div>
 							{item.from}-{item.to}
 						</div>
 					</div>
 				</div>
-				<h3>{item.company}</h3>
+
 				<div className="details">{item.description}</div>
 			</section>
 		);
@@ -104,7 +106,6 @@ function App() {
 						</div>
 					</div>
 				</div>
-				<h3>{item.major}</h3>
 				<div className="details">{item.description}</div>
 			</section>
 		);
@@ -224,10 +225,14 @@ function App() {
 				<div className="preview">
 					<div className="preview-container">
 						<div>{personalPreview}</div>
-						<h3>EXPERIENCE</h3>
-						<div>{experiencePreview}</div>
-						<h3>EDUCATION</h3>
+						<br></br>
+						<h3>EDUCATION:</h3>
+
 						<div>{educationPreview}</div>
+						<br></br>
+						<h3>EXPERIENCE:</h3>
+						<div>{experiencePreview}</div>
+						<br></br>
 					</div>
 				</div>
 			</div>
