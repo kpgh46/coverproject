@@ -42,9 +42,19 @@ function App() {
 
 	let [experienceData, setExperienceData] = React.useState([
 		{
-			role: "Software Engineer",
+			role: "Network Enablement Lead",
 			company: "SAP",
-			description: "blah blah blah",
+			description:
+				"-Manage several global projects by collaborating with buyers in effort to onboard over 80% of their suppliers onto the Ariba Network platform \n-Partner with key stakeholders from the implementation phase to go-live and continue to provide support to ensure best practices are followed and enablement activity is ongoing \n-Analyze reports and deliver weekly project statuses to the buyer with customized action plans based on their unique program and deliverable objectives\n-Forecast enablement activity using data analytics to build and design programs that meet the buyers’ business goals and align with their resource allocation",
+			from: "2020-05-17",
+			to: "2022-05-18",
+			id: uniqid(),
+		},
+		{
+			role: "Product Specialist",
+			company: "M*Modal",
+			description:
+				"-Managed over 30 Fluency Direct clients in successfully deploying speech recognition software and maintaining customer satisfaction by meeting needs at both an administrative and end user levels \n-Trained end users and support staff on Fluency Direct through at-the-elbow lessons and classroom presentations either remotely or onsite \n -Analyzed utilization reports and proactively anticipate customer needs resulting in an increased adoption rate of over 70% and additional licenses and services sold \n-Collaborated with various teams including different levels of support, development, quality assurance, and product management in order to ensure customer satisfaction ",
 			from: "2020-05-17",
 			to: "2022-05-18",
 			id: uniqid(),
@@ -55,7 +65,8 @@ function App() {
 		{
 			university: "Pennsylvania State University",
 			major: "Bachelor's Degree in Business Administration",
-			description: "Education blah blah blah",
+			description:
+				"-Major: Bachelor's Degree in Business Administration \n-Minor: Marketing",
 			from: "2006-05-17",
 			to: "2011-05-18",
 			id: uniqid(),
