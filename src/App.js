@@ -24,15 +24,21 @@ function App() {
 
 	//////////////////////////////////////////////////////
 
-	let [personalData, setPersonalData] = React.useState([
-		{
-			name: "Kevin McPeak",
-			email: "kmcpeak46@gmail.com",
-			address: "Pittsburgh",
-			phone: "12343",
-			id: uniqid(),
-		},
-	]);
+	let pData = {
+		name: "Kevin McPeak",
+		email: "kmcpeak46@gmail.com",
+		address: "Pittsburgh",
+		phone: "12343",
+		id: uniqid(),
+	};
+
+	let [personalData, setPersonalData] = React.useState(
+		JSON.parse(localStorage.getItem("personalData") || JSON.parse([pData]))
+	);
+
+	React.useEffect(() => {
+		localStorage.setItem("personalData", JSON.stringify(personalData));
+	}, [personalData]);
 
 	let [experienceData, setExperienceData] = React.useState([
 		{
