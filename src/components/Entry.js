@@ -80,15 +80,11 @@ export default function Entry(props) {
 
 	return (
 		<div>
-			<h4 className="entry-header">{props.entryHeader}</h4>
-			<div className="entry-section">
-				<form>
-					{textInputs}
-					{dateInputs}
-					{descriptionInputs}
-				</form>
+			<h4 className="entry-header">
+				{props.entryHeader}
 				{props.entryHeader !== "Personal" ? (
 					<button
+						className="delete-button"
 						onClick={(event) =>
 							props.removeSection(event, props.id, props.setData)
 						}
@@ -98,6 +94,13 @@ export default function Entry(props) {
 				) : (
 					""
 				)}
+			</h4>
+			<div className="entry-section">
+				<form>
+					{textInputs}
+					{dateInputs}
+					{descriptionInputs}
+				</form>
 			</div>
 		</div>
 	);

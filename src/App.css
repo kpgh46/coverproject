@@ -184,10 +184,16 @@ span {
 button {
 	height: 40px;
 	background-color: white;
-	border: 0.5 solid lightgrey;
+	border: thin solid black;
 	border-radius: 5px;
+	margin-top: 5px;
 }
 
 button:hover {
-	background-color: rgb(231, 229, 229);
+	background-color: rgb(245, 243, 243);
+}
+
+.delete-button {
+	height: 25px;
+	margin-left: 5px;
 }
