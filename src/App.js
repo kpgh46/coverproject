@@ -180,8 +180,8 @@ function App() {
 			role: "",
 			company: "",
 			description: "",
-			to: "",
-			from: "",
+			to: "2020-05-17",
+			from: "2020-05-17",
 			id: uniqid(),
 		};
 
@@ -194,8 +194,8 @@ function App() {
 			university: "",
 			major: "",
 			description: "",
-			to: "",
-			from: "",
+			to: "2020-05-17",
+			from: "2020-05-17",
 			id: uniqid(),
 		};
 
