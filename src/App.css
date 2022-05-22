@@ -12,7 +12,6 @@ body {
 	position: relative;
 	color: white;
 	height: 90px;
-	/* border: 1px solid; */
 	justify-content: center;
 	align-items: center;
 	background-color: lightgrey;
@@ -22,14 +21,13 @@ body {
 .main {
 	display: flex;
 	height: 1000px;
-	/* border: 1px solid; */
+	
 }
 
 .entry {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	/* border: 1px solid red; */
 	width: 35%;
 	margin-left: 30px;
 }
@@ -37,7 +35,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* border: 1px solid blue; */
 	width: 65%;
 }
 
@@ -45,10 +42,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	/* align-items: center; */
+	
 	width: 73%;
 	height: 800px;
-	/* border: 1px solid black; */
 	margin-top: 22px;
 	border-radius: 4px;
 	border: 0.5px solid grey;
@@ -66,7 +62,6 @@ body {
 
 .entry-section {
 	width: 85%;
-	/* border: 1px green solid; */
 	height: auto;
 }
 
@@ -78,7 +73,7 @@ input {
 	border-radius: 4px;
 	box-sizing: content-box;
 	background: none;
-	height: 1.4375em;
+	height: .5em;
 	margin: 0px;
 	-webkit-tap-highlight-color: transparent;
 	display: block;
@@ -121,14 +116,12 @@ textarea {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* border: 1px solid red; */
 	position: relative;
 }
 
 .preview-experience {
 	display: flex;
 	flex-direction: column;
-	/* border: 1px solid red; */
 	padding-left: 25px;
 }
 
@@ -144,9 +137,9 @@ h3 {
 
 .details {
 	display: flex;
-	/* border: 1px solid; */
-	width: 100%;
+	width: 95%;
 	padding-left: 25px;
+	
 }
 
 .dates {
@@ -154,12 +147,10 @@ h3 {
 	justify-content: space-between;
 	height: 35px;
 	align-items: center;
-	/* border: 1px solid black; */
 	width: 100%;
 	font-size: 25px;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	/* background-color: lightgray; */
 	margin-bottom: 0;
 }
 
@@ -171,9 +162,8 @@ h3 {
 .dates div {
 	display: flex;
 	font-size: 12px;
-
 	margin-right: 8px;
-	/* width: 200px; */
+	
 }
 
 span {
